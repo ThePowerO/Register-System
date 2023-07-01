@@ -1,4 +1,4 @@
-customers =[]
+customers = []
 address = []
 
 def register():
@@ -38,12 +38,12 @@ def Address():
     while True:
 
         print("Provide a login of a user")
-        list = {i['login']: i for i in customers}
+        list_dict = {i['login']: i for i in customers}
         search = input("Login: ")
 
         #Only to a valid user
 
-        if search in list:
+        if search in list_dict:
             print("[Provide customer addres]: ")
         
             infoLocal = {}
@@ -70,19 +70,19 @@ def showData():
     while True:
         print("Provide a Login of a user to view informations from the user!")
 
-        list = {i['login']: i for i in customers}
+        list_dict = {i['login']: i for i in customers}
         list2 = {i['id']: i for i in address}
 
         search = input("Login: ")
 
-        if search in list and search not in list2:
+        if search in list_dict and search not in list2:
             print(f"Customer data: [{search.upper()}]: {list[search]}")
 
             print('')
             print("Address not registered")
             print('')
 
-        elif search in list and search in list2:
+        elif search in list_dict and search in list2:
             print('')
             print(f"Customer data: [{search.upper()}]: {list[search]}")
             print('')
